@@ -1,0 +1,28 @@
+在cmd命令行中执行以下操作即可（复制黏贴）：
+
+打开：
+mysql -hlocalhost -uroot -p123456
+
+建库：
+
+CREATE DATABASE MUSICHASH;
+USE MUSICHASH;
+
+建表：
+
+CREATE TABLE song 
+(Id int not NULL AUTO_INCREMENT,
+path varchar(255) not NULL,
+PRIMARY KEY ( Id )
+);
+
+CREATE TABLE finger 
+(Id int not NULL AUTO_INCREMENT,
+f1 varchar(50) not NULL,
+f2 varchar(50) not NULL,
+dt varchar(50) not NULL,
+song int not NULL,
+offset VARCHAR(50),
+foreign key(song) references song(Id),
+PRIMARY KEY ( Id )
+);
